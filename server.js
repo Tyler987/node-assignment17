@@ -12,7 +12,7 @@ const upload = multer({ dest: __dirname + "/public/images" });
 
 mongoose
   .connect(
-    "mongodb+srv://tylerkorth12:Harpswell0!@tyler.mfrtbgb.mongodb.net/"
+    "mongodb+srv://tylerkorth12:ILoveDogs1!@tyler.mfrtbgb.mongodb.net/"
   )
   .then(() => console.log("Connected to mongodb..."))
   .catch((err) => console.error("could not connect ot mongodb...", err));
