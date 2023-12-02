@@ -113,9 +113,11 @@ const addEditWorkout = async(e) => {
     e.preventDefault();
     const form = document.getElementById("add-edit-workout-form");
     const formData = new FormData(form);
-    formData.delete("img");
-    formData.append("exercises", getExercises());
+    // formData.delete("img");
     let response;
+
+    formData.append("exercises", getExercises());
+    // let response;
     if (form._id.value == -1) {
         formData.delete("_id");
 
