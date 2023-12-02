@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Workouts</h1>
+        <a href="#" id="add-link">Click to Add a workout</a>
+    </header>
+
+    <div class="columns two-columns">
+        <div id="workout-list" class="columns"></div>
+        <div id="workout-details-column">
+            <h2>Details</h2>
+
+            <div id="workout-details"></div>
+        </div>
+    </div>
+    <div id="add-edit-workout-container" class="dialog transparent">
+        <span class="close">&times;</span>
+
+        <h3 id="add-edit-title">Workout</h3>
+        <form id="add-edit-workout-form" method="post">
+            <input type="hidden" name="_id" value="-1" />
+            <p>
+                <label for="name">Workout Name:</label>
+                <input type="text" id="name" name="name" required />
+            </p>
+            <p>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required />
+            </p>
+
+            <p>
+                <label for="img">Upload Image:</label>
+                <input type="file" id="img" name="img" />
+            </p>
+
+            <p id="exercises-p">
+                <label class="inline">Exercises:</label>
+                <a href="#" id="add-exercise">Add Exercise</a>
+                <section id="exercise-boxes"></section>
+            </p>
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>
