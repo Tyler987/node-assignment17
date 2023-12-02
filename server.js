@@ -64,7 +64,7 @@ app.post("/api/workouts", upload.single("img"), (req, res) => {
         workout.img = "images/" + req.file.filename;
       }
     
-      createWorkout(workout, res);
+      createWorkout(res, workout);
     });
 const createWorkout = async (res, workout) => {
     const result = await workout.save();
@@ -99,7 +99,7 @@ app.put("/api/workouts/:id", upload.single("img"), (req, res) => {
       };
       
       app.delete("/api/workouts/:id", upload.single("img"), (req, res) => {
-        removeWorkouts(res, req.params.id);
+        removeWorkout(res, req.params.id);
       });
       
       const removeWorkout = async (res, id) => {
