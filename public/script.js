@@ -97,12 +97,13 @@ const populateEditForm = (workout) => {
     form._id.value = workout._id;
     form.name.value = workout.name;
     form.description.value = workout.description;
-    populateExercises(workout.exercises);
+    // populateExercises(workout.exercises);
+    populateExercise(workout);
 
 };
-const populateExercises = (exercises) => {
+const populateExercise = (exercise) => {
     const section = document.getElementById("exercise-boxes");
-    exercises.forEach((exercise) => {
+    workout.exercise.forEach((exercise) => {
         const input = document.createElement("input");
         input.type = "text";
         input.value = exercise;
@@ -178,11 +179,16 @@ const showHideAdd = (e) => {
 };
 
 const addExercise = (e) => {
+    // e.preventDefault();
+    // const exerciseBoxes = document.getElementById("exercise-boxes");
+    // const input = document.createElement("input");
+    // input.type = "text";
+    // exerciseBoxes.append(input);
     e.preventDefault();
-    const exerciseBoxes = document.getElementById("exercise-boxes");
+    const section = document.getElementById("exercise-boxes");
     const input = document.createElement("input");
     input.type = "text";
-    exerciseBoxes.append(input);
+    section.append(input);
 };
 
 window.onload = () => {
