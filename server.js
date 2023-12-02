@@ -40,8 +40,10 @@ const workoutSchema = new mongoose.Schema({
 //     const workouts = await Workout.find();
 //     res.send(workouts);
 //   };
-const getWorkout = async (res, id) => {
-    const workout = Workout.findOne({_id: id });
+const getWorkouts = async (res, id) => {
+    // const workout = Workout.findOne({_id: id });
+    const workouts = await Workout.find();
+    res.send(workouts);
 };
 
 app.post("/api/workouts", upload.single("img"), (req, res) => {
@@ -97,7 +99,7 @@ app.put("/api/workouts/:id", upload.single("img"), (req, res) => {
       };
       
       app.delete("/api/workouts/:id", upload.single("img"), (req, res) => {
-        removeWorkout(res, req.params.id);
+        removeWorkouts(res, req.params.id);
       });
       
       const removeWorkout = async (res, id) => {
