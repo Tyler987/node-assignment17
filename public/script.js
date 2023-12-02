@@ -101,7 +101,7 @@ const populateEditForm = (workout) => {
     populateExercise(workout);
 
 };
-const populateExercise = (exercise) => {
+const populateExercise = (workout) => {
     const section = document.getElementById("exercise-boxes");
     workout.exercises.forEach((exercise) => {
         const input = document.createElement("input");
